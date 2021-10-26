@@ -1,0 +1,27 @@
+# ignore everything within a Folder #
+##########################################
+**/Mitschnitte/**/*.*
+**/Workspace/**/*.*
+
+# Except for... #
+#################
+!*.tex
+!*.cpp
+!*.h
+!*.pdf
+!*.asc
+!*.png
+!*.circ
+!*.docx
+!*.xdc
+!*.vhd
+!*.do
+
+
+# and these REALLY DONT! #
+##########################
+
+**/NetCase/**/*.*
+**/.vscode/**/*.*
+
+**/OOAD/**/*.*
