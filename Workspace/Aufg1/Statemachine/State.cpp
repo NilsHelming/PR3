@@ -33,7 +33,10 @@ bool StateQ0::isGoal(){return true;}
  *
  * return           : State&           - Folge-State über a-Pfeil.
  */
-State& StateQ0::goA(){delete this; return *new StateQ1();}
+State& StateQ0::goA(){
+    delete this;
+    return *new StateQ1();
+}
 
 /*
  * Methode: State& StateQ0::goB()
@@ -46,7 +49,10 @@ State& StateQ0::goA(){delete this; return *new StateQ1();}
  *
  * return           : State&           - Folge-State über b-Pfeil.
  */
-State& StateQ0::goB(){delete this; return *new StateQ4();}
+State& StateQ0::goB(){
+    delete this;
+    return *new StateQ4();
+}
 
 /*
  * Methode: bool StateQ1::isGoal()
@@ -68,7 +74,10 @@ bool StateQ1::isGoal(){return false;}
  *
  * return           : State&           - Folge-State über a-Pfeil.
  */
-State& StateQ1::goA(){delete this; return *new StateQ4();}
+State& StateQ1::goA(){
+    delete this;
+    return *new StateQ4();
+}
 
 /*
  * Methode: bool StateQ1::goB()
@@ -81,7 +90,10 @@ State& StateQ1::goA(){delete this; return *new StateQ4();}
  *
  * return           : State&           - Folge-State über b-Pfeil.
  */
-State& StateQ1::goB(){delete this; return *new StateQ2();}
+State& StateQ1::goB(){
+    delete this;
+    return *new StateQ2();
+}
 
 /*
  * Methode: bool StateQ2::isGoal()
@@ -103,7 +115,10 @@ bool StateQ2::isGoal(){return true;}
  *
  * return           : State&           - Folge-State über a-Pfeil.
  */
-State& StateQ2::goA(){delete this; return *new StateQ3();}
+State& StateQ2::goA(){
+    delete this;
+    return *new StateQ3();
+}
 
 /*
  * Methode: bool StateQ2::goB()
@@ -116,7 +131,10 @@ State& StateQ2::goA(){delete this; return *new StateQ3();}
  *
  * return           : State&           - Folge-State über b-Pfeil.
  */
-State& StateQ2::goB(){delete this; return *new StateQ4();}
+State& StateQ2::goB(){
+    delete this;
+    return *new StateQ4();
+}
 
 /*
  * Methode: bool StateQ3::isGoal()
@@ -138,7 +156,10 @@ bool StateQ3::isGoal(){return true;}
  *
  * return           : State&           - Folge-State über a-Pfeil.
  */
-State& StateQ3::goA(){delete this; return *new StateQ1();};
+State& StateQ3::goA(){
+    delete this;
+    return *new StateQ1();
+};
 
 /*
  * Methode: bool StateQ3::goB()
@@ -151,7 +172,10 @@ State& StateQ3::goA(){delete this; return *new StateQ1();};
  *
  * return           : State&           - Folge-State über b-Pfeil.
  */
-State& StateQ3::goB(){delete this; return *new StateQ2();};
+State& StateQ3::goB(){
+    delete this;
+    return *new StateQ2();
+};
 
 /*
  * Methode: bool StateQ4::isGoal()

@@ -23,8 +23,8 @@
  * return           : int           - 0, falls erfolgreich ausgeführt
  */
 int main(){
-    Statemachine m;
-    m.parse("aba");
-    std::cout << m.isSuccessful() << std::endl;
+    Statemachine machine;
+    machine.parse("aba");
+    std::cout << machine.isSuccessful() << std::endl;
     return 0;
 }
