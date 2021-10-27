@@ -1,3 +1,15 @@
+/*
+ * -----------------------------------------------------------------------------
+ *
+ * Aufgabe: 1.1 Zustandsautomat
+ * Autor: Nils Helming
+ *
+ * Implementation der Statemachine.
+ *
+ * Praktikum Programmierung 3, HS Osnabrueck
+ * -----------------------------------------------------------------------------
+ */
+
 #include <string>
 #include <stdexcept>
 
