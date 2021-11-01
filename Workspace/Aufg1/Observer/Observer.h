@@ -44,7 +44,7 @@ public:
      * Die Methode, die von allen Obervables aufgerufen werden, um den jeweiligen
      * Observer anzusprechen.
      */
-    virtual void update();
+    virtual void update() = 0;
 
     /*
      * Methode: Observer::toString()
@@ -54,5 +54,5 @@ public:
      *
      * return           : std::string           - Identifizierender String.
      */
-    virtual std::string toString();
+    virtual std::string toString() = 0;
 };

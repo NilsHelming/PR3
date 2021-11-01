@@ -60,16 +60,7 @@ public:
      * return           : bool          - true, falls sich der Tweet geaendert hat und somit
      *                                    alle Observer informiert wurden.
      */
-    bool setTweet(std::string _tweet){
-        //falls der neue Tweet identisch zum alten ist, soll niemand notified werden.
-        //in diesem Fall soll auch false zurueck gegeben werden.
-        if(tweet == _tweet)
-            return false;
-
-        tweet = _tweet;
-        this->notifyObservers();
-        return true;
-    };
+    bool setTweet(std::string _tweet);
 
     /*
      * Methode: std::string Autor::getTweet()
@@ -78,9 +69,7 @@ public:
      *
      * return           : std::string   - Der aktuelle Tweet dieses Autors.
      */
-    std::string getTweet(){
-        return this->tweet;
-    }
+    std::string getTweet(){return this->tweet;}
 
     /*
      * Methode: std::string Autor::getName()
@@ -89,7 +78,14 @@ public:
      *
      * return           : std::string   - Der Name dieses Autors.
      */
-    std::string getName(){
-        return this->name;
-    }
+    std::string getName(){return this->name;}
+
+    /*
+     * Methode: std::string Autor::toString()
+     *
+     * Gibt eine kurze Zusammenfassung des Autors zurueck.
+     *
+     * return           : std::string   - Der Name dieses Autors.
+     */
+    std::string toString();
 };

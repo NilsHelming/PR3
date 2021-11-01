@@ -57,19 +57,7 @@ public:
      * return           : bool              - true, falls der Observer tatsaechlich
      *                                        hinzugefügt wurde. (false, falls Duplikat)
      */
-    virtual bool addObserver(Observer& observer){
-        Observer* pObserver = &observer;
-
-        //check, if the Observer is already contained in the list
-        //return false, if so.
-        for(const Observer* comp : observers)
-            if(comp == pObserver)
-                return false;
-
-        //the observer was not contained in the list, we can add it.
-        observers.push_back(pObserver);
-        return true;
-    };
+    virtual bool addObserver(Observer& observer);
 
     /*
      * Methode: bool Observable::remObserver(const Observer& observer)
@@ -81,26 +69,12 @@ public:
      * return           : bool              - true, falls der Observer tatsaechlich
      *                                        entfernt wurde. (false, falls nicht vorhanden)
      */
-    virtual bool remObserver(Observer& observer){
-        Observer* pObserver = &observer;
-        bool bContained = false;
-
-        //search for the to be removed observer, update bContained once found.
-        for(const Observer* comp : observers)
-            if(comp == pObserver)
-                bContained = true;
-
-        observers.remove(pObserver);
-        return bContained;
-    };
+    virtual bool remObserver(Observer& observer);
 
     /*
      * Methode: void Observable::notifyObservers()
      *
      * Alle registrierten Observer werden per Observer::update() angesprochen.
      */
-    virtual void notifyObservers(){
-        for(Observer* pObserver : observers)
-            pObserver->update();
-    };
+    virtual void notifyObservers();
 };
