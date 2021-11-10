@@ -24,7 +24,7 @@
  */
 int main(){
     Statemachine machine;
-    machine.parse("aba");
-    std::cout << machine.isSuccessful() << std::endl;
+    machine.parse("abaa");
+    std::cout << "output: " << machine.isSuccessful() << std::endl;
     return 0;
 }

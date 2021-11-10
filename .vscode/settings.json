@@ -49,7 +49,11 @@
         "xmemory": "cpp",
         "xstddef": "cpp",
         "xtr1common": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "bit": "cpp",
+        "clocale": "cpp",
+        "map": "cpp",
+        "xtree": "cpp"
     },
     "files.exclude": {
         "**/*.gcda": true,
