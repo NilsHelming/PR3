@@ -30,7 +30,16 @@ typedef std::map<char, int> Charcounter;
 typedef std::unordered_set<std::string, lengthHash> LengthSet;
 typedef std::set<std::string> StringSet;
 
-
+/**
+ * @brief Diese Funktion soll den Inhalt einer Datei analysieren, und das
+ * Aufkommen unterschiedlicher Buchstaben Zaehlen. Dafür wird die Struktur zum
+ * Zaehlen und ein FileStream uebergeben. Es werden nur Alphanumerische Zeichen
+ * gezaehlt
+ *
+ * @param counter Die Map, in welcher zu den unterschiedlichen Zeichen deren
+ * Anzahl gespeichert wird.
+ * @param file Der File-Stream, welcher zugriff auf die gewünschte Datei bietet.
+ */
 void count_char(Charcounter& counter, std::ifstream& file){
     if(!file.is_open())
         throw new std::logic_error("cannot count from a closed file.");
@@ -43,6 +52,13 @@ void count_char(Charcounter& counter, std::ifstream& file){
         }
 }
 
+/**
+ * @brief Der übergebene String wird so bearbeitet, dass er keine Sonderzeichen
+ * enthält und ausschliesslich aus Kleinbuchstaben besteht.
+ *
+ * @param str Der String, welcher bearbeitet werden soll.
+ * @return std::string& Eine Referenz auf den übergebenen String.
+ */
 std::string& toWord(std::string& str){
     str.erase( //remove all non-alphabetical characters
         std::remove_if(str.begin(), str.end(),
@@ -55,10 +71,29 @@ std::string& toWord(std::string& str){
     return str;
 }
 
+/**
+ * @brief Soll bestimmen, ob ein Wort von 'Wortlänge' (2-20) ist. Der String
+ * wird nicht ausserhalb der Länge analysiert.
+ *
+ * @param word String, dessen Länge bestimmt, ob es ein Wort ist.
+ * @return true Falls der String minimal 2 lang ist, und maximal 20 lang ist.
+ * @return false Falls der String zu kurz oder zu lang ist.
+ */
 bool isWordLength(const std::string& word){
     return (word.length() >= 2 && word.length() <= 20);
 }
 
+/**
+ * Funktion: collection_by_length(file)
+ *
+ * Diese Funktion soll einen Filestream erhalten, und den Inhalt dieser Datei in
+ * eine Wortsammlung sammeln. Diese Sammlung ist in diesem Fall nach länge der
+ * Worte gruppiert. Jede Wortlänge erhält also seinen eigenen Bucket. Identische
+ * Worte werden auch mehrfach in der Sammlung vorkommen.
+ *
+ * @param file Die Datei, aus welcher gelesen werden soll.
+ * @return std::unordered_set<std::string, lengthHash> Die Sammlung aller Worte.
+ */
 LengthSet collection_by_length(std::ifstream& file){
     if(!file.is_open())
         throw new std::logic_error("cannot read from a closed file.");
@@ -79,7 +114,7 @@ LengthSet collection_by_length(std::ifstream& file){
 /*
  * Funktion: int main()
  *
- * Diese
+ * Diese Funktion soll zwei Beispiele der Textstatistik ausführen.
  *
  * return           : int           - 0, falls erfolgreich ausgeführt
  */
@@ -108,7 +143,6 @@ int main(){
     #if 1 //Test 2:
     {
         std::ifstream reader(filename);
-
 
         LengthSet lengthSet = collection_by_length(reader);
 
