@@ -53,7 +53,11 @@
         "bit": "cpp",
         "clocale": "cpp",
         "map": "cpp",
-        "xtree": "cpp"
+        "xtree": "cpp",
+        "set": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp",
+        "xhash": "cpp"
     },
     "files.exclude": {
         "**/*.gcda": true,
