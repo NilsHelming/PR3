@@ -20,6 +20,7 @@ using std::list;
 
 typedef list<int> Container;          // Anforderung: beliebiger sequenzieller Container!
 typedef Container::value_type C_Elem; // Anforderung: operator< implementiert
+typedef Container::iterator C_Iter;
 
 /**
  * @brief Diese Funktion bestimmt ueber einen rekursiven Ansatz das n-t kleinste
