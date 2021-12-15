@@ -16,10 +16,26 @@
  * @brief Soll Binomische Zahlen fuer n und k bestimmen. Dies geschieht per
  * rekursion.
  *
- * @param n n>=0
- * @param k k>=0, k<=n
+ * @param n
+ * @param k k<=n
  * @return int
  */
 unsigned int binomi_rekursiv(unsigned int n, unsigned int k);
+/**
+ * @brief Soll Binomische Zahlen fuer n und k bestimmen. Dies geschieht per
+ * Stapel.
+ *
+ * @param n
+ * @param k k<=n
+ * @return int
+ */
 unsigned int binomi_stapel(unsigned int n, unsigned int k);
+/**
+ * @brief Soll Binomische Zahlen fuer n und k bestimmen. Dies geschieht
+ * iterativ.
+ *
+ * @param n
+ * @param k k<=n
+ * @return int
+ */
 unsigned int binomi_iterativ(unsigned int n, unsigned int k);

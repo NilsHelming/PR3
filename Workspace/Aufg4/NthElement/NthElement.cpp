@@ -21,23 +21,6 @@ using std::copy_if;
 #include <iterator>
 using std::back_inserter;
 
-/**
- * @brief Unaeres Praedikat, welches bestimmt, ob die im Konstruktor angegebene
- * Zahl die uebergebene Zahl ganz Teilt.
- *
- */
-class multipleOf {
-private:
-    C_Elem n;
-public:
-    multipleOf(C_Elem _n) : n(_n) {}
-
-    bool operator()(C_Elem x) const {
-        return (x%n) == 0;
-    }
-};
-
-
 C_Elem nthElement(Container c, int n){
     //a few checks first:
     //is there any element in the container?

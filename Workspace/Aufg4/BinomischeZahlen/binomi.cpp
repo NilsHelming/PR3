@@ -21,12 +21,19 @@ using std::stack;
 #include <tuple>
 using std::pair;
 
+#include <algorithm>
+using std::min;
+using std::max;
+
+#include <vector>
+using std::vector;
+
 unsigned int binomi_rekursiv(unsigned int n, unsigned int k){
     if(k>n)
         throw new logic_error("Binomial Coefficients are not defined for this case");
 
     if(k == 0 || k == n)
-        return 0;
+        return 1;
     else if(k == 1)
         return n;
     else
@@ -60,4 +67,34 @@ unsigned int binomi_stapel(unsigned int n, unsigned int k){
         }
     }
     return sum;
+}
+
+unsigned int binomi_iterativ(unsigned int n, unsigned int k){
+    if(k>n)
+        throw new logic_error("Binomial Coefficients are not defined for this case");
+
+    k = min(k, n-k);
+
+    //maximaler wert innerhalb von integer ist binom(33,17)
+    if(k>17)
+        throw new logic_error("Result too big for int");
+
+    //die momentan betrachtete Zeile.
+    //Elemente dieser Zeile werden immer rueckwaerts mit den Elementen der
+    //naechsten Zeile ersetzt.
+    int arrZeile[18];
+    //vector<int> vZeile(k+1, 0);
+    for(unsigned int zeile = 0; zeile < n; ++zeile){
+        int spaltenMin = max((unsigned int)0, k-(n-(zeile+1)));
+        int spaltenMax = min(k, zeile+1);
+        for(int spalte = spaltenMax; spalte >= spaltenMin; --spalte){
+            if(spalte == 0 || spalte == zeile+1) //seiten des Dreiecks
+                arrZeile[spalte] = 1;
+            else //binom(n,k) = binom(n-1,k-1) + binom(n-1,k)
+                arrZeile[spalte] =
+                    arrZeile[spalte-1] + arrZeile[spalte];
+        }
+    }
+
+    return arrZeile[k];
 }

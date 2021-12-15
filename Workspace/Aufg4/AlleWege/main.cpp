@@ -27,6 +27,7 @@ int main(int argc, char const *argv[])
     std::cout << "1x2: "<< alleWege(1,2) << std::endl;
     std::cout << "2x1: "<< alleWege(2,1) << std::endl;
     std::cout << "2x2: "<< alleWege(2,2) << std::endl;
+    std::cout << "4x5: "<< alleWege(4,5) << std::endl;
     std::cout << "10x10: "<< alleWege(10,10) << std::endl;
 
 
